@@ -1,0 +1,5 @@
+<h1>List of participents</h1>
+
+<% User.find(params["user_id"]).events.find_by_id(params["event_id"]).participents.each do |p|%>
+<%= User.find(p.user_id).firstname %>
+	<% end %>

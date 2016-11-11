@@ -27,6 +27,8 @@ get "/users/:user_id/events/new" => "events#new", as: :new_event
 
 post "/users/:user_id/events" => "events#create", as: :create_event
 
+get "/users/:user_id/events/:event_id/participents" => "events#list_participents", as: :list_participents
+
 # resources :sessions
 
 

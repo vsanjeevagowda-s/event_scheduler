@@ -8,7 +8,7 @@ class SessionsController < ApplicationController
   	user = User.find_by(email: params[:email] )
   	if user && user.authenticate(params[:password])
       session[:user_id]=user.id
-      flash[:success]="welcone to rails"
+      flash[:success]="welcome"
       redirect_to list_events_path(current_user)
   	else
       flash[:danger]="email or password is incorrect"

@@ -7,7 +7,10 @@
 		<h1>List of Events</h1>
 	<% @events.each do |e| %>
 	<strong>Event : </strong><%= e.title %><br>
-	<strong>Organiser : </strong>	<%= User.find(e.owner_id).firstname%>&nbsp;<%= User.find(e.owner_id).lastname%>
+	<strong>Organiser : </strong>	<%= User.find(e.owner_id).firstname%>&nbsp;<%= User.find(e.owner_id).lastname%><br>
+ 
+ <%= link_to "Participents", list_participents_path(current_user,e), "data-toggle" => "modal", "data-target"=>"#myModal" %>	
+	<br><br>
 			<% end %>
 </div>
 </div>
