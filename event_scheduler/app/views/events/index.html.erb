@@ -1,0 +1,33 @@
+<%= link_to 'Add event', new_event_path, "class" => "addevent btn btn-primary"  %>
+
+<div class="container">
+<div class="row">
+<div class="col-md-6">
+<div class="well">
+		<h1>List of Events</h1>
+	<% @events.each do |e| %>
+	<strong>Event : </strong><%= e.title %><br>
+	<strong>Organiser : </strong>	<%= User.find(e.owner_id).firstname%>&nbsp;<%= User.find(e.owner_id).lastname%>
+			<% end %>
+</div>
+</div>
+
+
+<div class="col-md-6">
+<div class="well">
+	
+		<% @events.each do |e| %>
+		<strong>Event Name : </strong><%= e.title %><br>
+		<strong>Venu : </strong><%= e.venue %><br>
+		<strong>Date : </strong><%= e.date %><br>
+		<strong>Time : </strong><%= e.time %><br>
+		<strong>Desc : </strong><%= e.desc %><br>
+		<strong>Invitee : </strong><%= e.invitee %><br>
+		
+			<% end %>
+</div>
+</div>
+</div><!-- row -->
+</div><!-- container -->
+
+
