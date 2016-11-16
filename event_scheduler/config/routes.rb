@@ -9,6 +9,8 @@ get "user/signup" => "users#new", as: :signup
 
 post "/users" => "users#create", as: :user_create
 
+get "/user/:id" => "users#show", as: :show_user
+
 
 # *********************************************************
 
@@ -21,16 +23,22 @@ post "/users" => "users#create", as: :user_create
 
 # ****************************************************
 
-get "/users/:user_id/events" => "events#index", as: :list_events
+get "/events" => "events#index", as: :list_events
 
-get "/users/:user_id/events/new" => "events#new", as: :new_event
+get "/events/new" => "events#new", as: :new_event
 
-post "/users/:user_id/events" => "events#create", as: :create_event
+post "/events" => "events#create", as: :create_event
 
-get "/users/:user_id/events/:event_id/participents" => "events#list_participents", as: :list_participents
+get "/events/:event_id/edit" => "events#edit", as: :edit_event
 
+patch "/events/:event_id" => "events#update", as: :update_event
+
+delete "/events/:id" => "events#destroy" , as: :delete_event
 # resources :sessions
+# *********************************************************************************
 
+
+  get '/sample' => 'events#sample', as: :sample
 
 #  Prefix Verb   URI Pattern                               Controller#Action
 #     user_events GET    /users/:user_id/events(.:format)          events#index
@@ -38,14 +46,14 @@ get "/users/:user_id/events/:event_id/participents" => "events#list_participents
  # new_user_event GET    /users/:user_id/events/new(.:format)      events#new
 # edit_user_event GET    /users/:user_id/events/:id/edit(.:format) events#edit
 #      user_event GET    /users/:user_id/events/:id(.:format)      events#show
-#                 PATCH  /users/:user_id/events/:id(.:format)      events#update
+                # PATCH  /users/:user_id/events/:id(.:format)      events#update
 #                 PUT    /users/:user_id/events/:id(.:format)      events#update
-#                 DELETE /users/:user_id/events/:id(.:format)      events#destroy
+                # DELETE /users/:user_id/events/:id(.:format)      events#destroy
 #           users GET    /users(.:format)                          users#index
 #                 POST   /users(.:format)                          users#create
        # new_user GET    /users/new(.:format)                      users#new
 #       edit_user GET    /users/:id/edit(.:format)                 users#edit
-#            user GET    /users/:id(.:format)                      users#show
+           # user GET    /users/:id(.:format)                      users#show
 #                 PATCH  /users/:id(.:format)                      users#update
 #                 PUT    /users/:id(.:format)                      users#update
 #                 DELETE /users/:id(.:format)                      users#destroy

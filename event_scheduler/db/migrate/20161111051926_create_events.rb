@@ -3,11 +3,10 @@ class CreateEvents < ActiveRecord::Migration
     create_table :events do |t|
       t.string :title
       t.string :venue
-      t.string :date
-      t.string :time
+      t.date :date
+      t.time :time
       t.string :desc
-      t.string :invitee
-      t.string :status
+      t.boolean :status
       t.integer :owner_id
 
       t.timestamps null: false

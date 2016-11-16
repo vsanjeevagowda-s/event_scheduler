@@ -1,0 +1,32 @@
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+     
+      <a class="navbar-brand" href="#">Event Scheduler</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+     
+      <ul class="nav navbar-nav navbar-right">
+        
+      <% if !logged_in? %>
+        <li class="signup"><a href="#"  data-toggle="modal" data-target="#myModal-signup">Sign Up</button></a>
+        <li class="login"><a href="#" data-toggle="modal" data-target="#myModal-login">Login</a>
+</li>
+        
+    
+      <% elsif logged_in? %>
+      <li><%= image_tag("avatar.jpg", size: "60x60", alt: "profile ing", "class" => "img-circle")%></li>
+      <li> 
+  <%= link_to User.find(current_user.id).firstname.upcase+" "+User.find(current_user.id).lastname.upcase,show_user_path(current_user) %></li>
+        <li class="logout"><%= link_to 'Logout', session_destroy_path, method: :delete %></li>
+     <% end %>
+     
+      </ul>
+    </div>
+  </div>
+</nav>
