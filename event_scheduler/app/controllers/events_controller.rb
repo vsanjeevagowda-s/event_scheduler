@@ -1,5 +1,5 @@
 class EventsController < ApplicationController
-	
+	before_action :must_login, only: [:show, :edit, :new, :index, :create, :update, :destroy, :invitation]
 
 	def new
 		# binding.pry
@@ -53,12 +53,25 @@ class EventsController < ApplicationController
 		@event.destroy
 		redirect_to list_events_path
 	end
+
+	def invitation
+		# binding.pry
+		@a =[]
+		current_user.participents.each do |p|
+			@a << p.event_id
+		end
+
+		@events=Event.find(@a)
+
+		respond_to do |format|
+			format.html {redirect_to list_events_path}
+			format.js
+		end
+	end
 	
 
 
-	def sample
-		
-	end
+	
 	
 
 

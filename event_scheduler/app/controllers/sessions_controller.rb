@@ -1,5 +1,5 @@
 class SessionsController < ApplicationController
-	
+	before_action :must_login, only: [:show, :destroy]
 
   def new
   end
@@ -14,7 +14,7 @@ class SessionsController < ApplicationController
       redirect_to list_events_path(current_user)
   	else
       flash[:danger]="email or password is incorrect"
-     
+     # binding.pry
       redirect_to root_path
   	end
   end

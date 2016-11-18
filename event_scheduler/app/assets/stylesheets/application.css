@@ -19,10 +19,15 @@
 
 
 .addevent{
-margin-left: 83%;
+
 margin-bottom: 10px;
 background-color: #F0AD4E;
 border-color: #F0AD4E;
+}
+
+.addeventdiv{
+	padding: 0px 6%;
+	text-align: right;
 }
 
 label.error{
@@ -84,7 +89,7 @@ font-weight: bolder;
 }
 
 .jumbotron{
-	margin:auto 300px;
+	
 	background-color: #333333;
 	color: white;
 	text-align: center;
@@ -98,8 +103,7 @@ font-weight: bolder;
 }
 
 .ju-text{
-	margin-top: 15%;	
-	vertical-align: sub;
+	
 }
 
 
@@ -132,6 +136,11 @@ font-weight: bolder;
 }
 
 .twitter{
+	text-align: center;
+}
+
+
+.user-edit{
 	text-align: center;
 }
 

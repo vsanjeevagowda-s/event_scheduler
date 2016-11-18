@@ -11,7 +11,11 @@ post "/users" => "users#create", as: :user_create
 
 get "/user/:id" => "users#show", as: :show_user
 
+get "/user/:id/edit" => "users#edit", as: :edit_user
 
+patch "user/:id" => "users#update", as: :update_user
+
+get "events/invitations" => "events#invitation", as: :user_invitation
 # *********************************************************
 
 
@@ -34,6 +38,8 @@ get "/events/:event_id/edit" => "events#edit", as: :edit_event
 patch "/events/:event_id" => "events#update", as: :update_event
 
 delete "/events/:id" => "events#destroy" , as: :delete_event
+
+
 # resources :sessions
 # *********************************************************************************
 

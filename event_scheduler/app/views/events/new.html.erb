@@ -16,11 +16,11 @@
 
   <p>
     <%= f.label :date %><br>
-    <%= f.date_field :date, "class" => "form-control" %>
+   <%= f.text_field :name, :id=>"datepicker", :readonly=>"true" %>
   </p>
   <p>
     <%= f.label :time %><br>
-    <%= f.time_field :time, "class" => "form-control"%>
+    <%= f.time_select :time, "class" => "form-control"%>
   </p>
   <p>
     <%= f.label :desc %><br>
